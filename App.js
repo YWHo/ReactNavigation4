@@ -34,6 +34,10 @@ class DetailsScreen extends React.Component {
           title="Go back"
           onPress={() => this.props.navigation.goBack()}
         />
+        <Button
+          title="Go back to Top"
+          onPress={() => this.props.navigation.popToTop()}
+        />
       </View>
     );
   }
