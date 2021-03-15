@@ -1,4 +1,4 @@
-# ReactNavigation5
+# ReactNavigation4
 
 An example coding for React Navigation 4.
 https://reactnavigation.org/docs/4.x/getting-started

@@ -23,10 +23,13 @@ class DetailsScreen extends React.Component {
   }
 }
 
-const AppNavigator = createStackNavigator({
-  Home: HomeScreen,
-  Details: DetailsScreen
-});
+const AppNavigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    Details: DetailsScreen
+  }, {
+    initialRouteName: 'Home'
+  });
 
 const AppContainer = createAppContainer(AppNavigator);
 
