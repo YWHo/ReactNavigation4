@@ -16,7 +16,7 @@ class LogoTitle extends React.Component {
 
 class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
-    const params = navigation.state.params || {};
+    // const params = navigation.state.params || {};
     return {
       headerLeft: () => (
         <Button
