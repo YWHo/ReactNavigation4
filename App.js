@@ -4,6 +4,10 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home Screen',
+  };
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -23,7 +27,10 @@ class HomeScreen extends React.Component {
 }
 
 class DetailsScreen extends React.Component {
-render() {
+  static navigationOptions = {
+    title: 'Details Section',
+  };
+  render() {
     const { navigation } = this.props;
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
