@@ -16,7 +16,15 @@ class LogoTitle extends React.Component {
 
 class HomeScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
+    const params = navigation.state.params || {};
     return {
+      headerLeft: () => (
+        <Button
+          onPress={() => navigation.navigate('MyModal')}
+          title="Info"
+          color="#fff"
+        />
+      ),
       headerTitle: () => <LogoTitle />,
       headerRight: () => (
         <Button
@@ -110,7 +118,21 @@ class DetailsScreen extends React.Component {
   }
 }
 
-const AppNavigator = createStackNavigator(
+class ModalScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ fontSize: 30 }}>This is a modal!</Text>
+        <Button
+          onPress={() => this.props.navigation.goBack()}
+          title="Dismiss"
+        />
+      </View>
+    );
+  }
+}
+
+const MainStack = createStackNavigator(
   {
     Home: HomeScreen,
     Details: DetailsScreen
@@ -125,9 +147,21 @@ const AppNavigator = createStackNavigator(
         fontWeight: 'bold',
       },
     }
-  });
+});
 
-const AppContainer = createAppContainer(AppNavigator);
+const RootStack = createStackNavigator(
+  {
+    Main: MainStack,
+    MyModal: ModalScreen
+  },
+  {
+    mode: 'modal',
+    headerMOde: 'none'
+  }
+
+);
+
+const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component {
   render() {
