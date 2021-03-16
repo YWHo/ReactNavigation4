@@ -6,6 +6,13 @@ import { createStackNavigator } from 'react-navigation-stack';
 class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Home Screen',
+    headerStyle: {
+      backgroundColor: '#f4511e',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    }
   };
 
   render() {
