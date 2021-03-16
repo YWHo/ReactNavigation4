@@ -45,6 +45,10 @@ class DetailsScreen extends React.Component {
           {JSON.stringify(navigation.getParam('otherParam', 'default value'))}
         </Text>
         <Button
+          title="Update the title"
+          onPress={() => this.props.navigation.setParams({ otherParam: 'Updated!' })}
+        />
+        <Button
           title="Go to Details... again"
           onPress={() =>
             navigation.push('Details', {
