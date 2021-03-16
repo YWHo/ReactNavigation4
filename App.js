@@ -1,11 +1,22 @@
 import React from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, Image, View, Text } from 'react-native';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
+class LogoTitle extends React.Component {
+  render() {
+    return (
+      <Image
+        source={require('./assets/react_native.png')}
+        style={{ width: 120, height: 45 }}
+      />
+    )
+  }
+}
+
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Home Screen'
+    headerTitle: () => <LogoTitle />
   };
 
   render() {
